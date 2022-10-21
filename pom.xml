@@ -77,5 +77,16 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>Repository</id>
+      <name>Repository</name>
+      <url>http://192.168.2.240:8081/#browse/browse:maven-releases</url>
+      <layout>default</layout>
+    </repository>
+    
+</distributionManagement>
 
 </project>
