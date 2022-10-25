@@ -47,6 +47,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	}
 	
 	private DetailFournisseur  saveDetailFournisseur(Fournisseur f){
+		
 		DetailFournisseur df = f.getDetailFournisseur();
 		detailFournisseurRepository.save(df);
 		return df;
@@ -54,7 +55,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 
 	public Fournisseur updateFournisseur(Fournisseur f) {
 		DetailFournisseur df = saveDetailFournisseur(f);
-		f.setDetailFournisseur(df);	
+	f.setDetailFournisseur(df);	
 		fournisseurRepository.save(f);
 		return f;
 	}
