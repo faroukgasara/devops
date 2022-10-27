@@ -1,0 +1,10 @@
+pipeline{
+    agent any 
+    stages{
+        stage('checkout git'){
+            steps{
+           git branch: 'AchrafBenZrig', credentialsId: 'test1', url: 'https://github.com/faroukgasara/devops'
+        }
+    }
+}
+}
