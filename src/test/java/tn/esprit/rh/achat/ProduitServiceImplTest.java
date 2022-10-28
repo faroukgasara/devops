@@ -1,5 +1,4 @@
-package devops;
-
+package tn.esprit.rh.achat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,8 +17,8 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest("src.test.java.devops.ProduitServiceImplTest")
-@Slf4j	
+@SpringBootTest
+@Slf4j
 public class ProduitServiceImplTest {
 	
 	@Autowired
@@ -60,3 +59,4 @@ public class ProduitServiceImplTest {
 	}
 
 }
+
