@@ -36,6 +36,12 @@ public class Produit implements Serializable {
 	private float prix;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
+	
+	public Produit(String codeProduit, String libelleProduit) {
+		super();
+		this.codeProduit = codeProduit;
+		this.libelleProduit = libelleProduit;
+	}
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
 	@ManyToOne
