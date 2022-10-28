@@ -6,5 +6,10 @@ pipeline{
            git branch: 'AchrafBenZrig', credentialsId: 'test1', url: 'https://github.com/faroukgasara/devops'
         }
     }
+    stage('cleaning java Project'){
+             steps{
+                 sh 'mvn clean compile'
+
+             }
 }
-}
+}}
