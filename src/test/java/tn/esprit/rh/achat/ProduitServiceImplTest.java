@@ -21,42 +21,7 @@ import org.junit.runner.RunWith;
 @Slf4j
 public class ProduitServiceImplTest {
 	
-	@Autowired
-	private ProduitRepository repo;
-	
-	
-	@Test
-	public void testCreateProduit() {
-	Produit prod = new Produit( "100" ,"200");
-	repo .save( prod ); }
-	
-	
-	@Test
-	public void testFindProduit(){
-		Produit p=repo.findById(1L).get();System.out.println(p);
-		System.out.println(p);
-	}
-	
-	@Test
-	public void testUpdateProduit(){
-		Produit p=repo.findById(1L).get();
-		p.setLibelleProduit("fr");
-		repo.save(p);
-		}
-	
-	@Test
-	public void testDeleteProduit()
 
-	{
-		repo.deleteById(1L);
-	}
-	
-	@Test 
-	public void testListerTousProduits () { 
-		List<Produit> prods = repo.findAll(); 
-		for (Produit p : prods) { System.out.println(p); 
-		}
-	}
 
 }
 
