@@ -13,10 +13,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.rh.achat.entities.Produit;
 import tn.esprit.rh.achat.repositories.ProduitRepository;
-import tn.esprit.rh.achat.services.IProduitService;
+
+import org.junit.runner.RunWith;
 
 
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest("src.test.java.devops.ProduitServiceImplTest")
 @Slf4j	
 public class ProduitServiceImplTest {
 	
