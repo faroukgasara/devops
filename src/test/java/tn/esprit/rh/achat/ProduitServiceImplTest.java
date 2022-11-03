@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import lombok.extern.slf4j.Slf4j;
 import tn.esprit.rh.achat.entities.Produit;
 import tn.esprit.rh.achat.repositories.ProduitRepository;
 
@@ -18,7 +17,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Slf4j
+
 public class ProduitServiceImplTest {
 	
 
