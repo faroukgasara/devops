@@ -35,7 +35,7 @@ services:
    restart: on-failure
    links:
       - mysqldb1
-   angular-app:
+  angular-app:
     #The docker file in FE, builds and provides the docker image.
     image: loujein/frontachat:latest
     ports:
