@@ -42,15 +42,15 @@ public class ProduiServiceImplTest {
    @InjectMocks
    ProduitServiceImpl produitService;
 
-    Produit p1 = new Produit(55L, "2365","produit1",50);
-    Produit p2 = new Produit(66L, "5681","produit5",120);
+    Produit p1 = new Produit("2365","produit1");
+    Produit p2 = new Produit("5681","produit5");
 
 
     List<Produit> listProduits = new ArrayList<Produit>() {
         {
             add(p1);
-            add(new Produit(90L, "9687","produit2",30));
-            add(new Produit(46L, "4503","produit3",70));
+            add(new Produit("9687","produit2"));
+            add(new Produit("4503","produit3"));
         }
     };
 
