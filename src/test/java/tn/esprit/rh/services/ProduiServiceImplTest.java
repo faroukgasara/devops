@@ -57,16 +57,6 @@ public class ProduiServiceImplTest {
 
 
     @Test
-    public void testRetrieveProduit() {
-
-        Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(p1));
-        Produit produit1 = produitService.retrieveProduit(55L);
-        assertNotNull(produit1);
-        System.out.println("1");
-        assertEquals(produit1.getIdProduit(),55L);
-   }
-
-    @Test
     public void testretrieveAllProduits() {
         Mockito.when(produitRepository.findAll()).thenReturn(listProduits);
         List<Produit> listproduit3 = produitService.retrieveAllProduits();
