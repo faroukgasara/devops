@@ -30,6 +30,11 @@ public class ReglementServiceImpl implements IReglementService {
 		log.info("Method execution time: " + elapsedTime + " milliseconds.");
 		return result;
 	}
+	@Override
+	public Reglement addReglement1(Reglement r) {
+        reglementRepository.save(r);
+		return r;
+	}
 
 	@Override
 	public ReglementDto retrieveReglement(Long id) {
