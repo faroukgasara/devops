@@ -1,6 +1,7 @@
 package com.esprit.examen.services;
 
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.any;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.runner.RunWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,7 +26,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @ContextConfiguration(classes = {ReglementServiceImpl.class})
-@RunWith(SpringRunner.class)
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest
 public class ReglementServiceTest {
     @MockBean
