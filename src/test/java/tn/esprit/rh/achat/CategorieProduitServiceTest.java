@@ -14,10 +14,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
-import com.esprit.examen.entities.Facture;
-import com.esprit.examen.entities.Operateur;
-import com.esprit.examen.repositories.OperateurRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.junit.Test;
 import org.junit.jupiter.api.MethodOrderer;
