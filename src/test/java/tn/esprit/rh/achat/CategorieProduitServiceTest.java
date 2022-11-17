@@ -1,32 +1,31 @@
 package tn.esprit.rh.services;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import tn.esprit.rh.achat.entities.CategorieProduit;
+import tn.esprit.rh.achat.repositories.CategorieProduitRepository;
+import tn.esprit.rh.achat.services.CategorieProduitServiceImpl;
+
+import org.junit.Test;
+
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import tn.esprit.rh.achat.entities.Produit;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import tn.esprit.rh.achat.entities.CategorieProduit;
-import tn.esprit.rh.achat.repositories.CategorieProduitRepository;
-import tn.esprit.rh.achat.services.CategorieProduitServiceImpl;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.times;
 
 @SpringBootTest
-@TestMethodOrder(OrderAnnotation.class)
-@ExtendWith(MockitoExtension.class)
+@RunWith(MockitoJUnitRunner.class)
 public class CategorieProduitServiceTest {
 
     @Mock
@@ -34,9 +33,29 @@ public class CategorieProduitServiceTest {
 
     @InjectMocks
     CategorieProduitServiceImpl categorieService;
+    
+     CategorieProduit cp1 = new CategorieProduit("2365","produit1");
+    CategorieProduit cp2 = new CategorieProduit("5681","produit5");
 
 
-    @Test
+    List<CategorieProduit> listProduits = new ArrayList<CategorieProduit>() {
+        {
+            add(p1);
+            add(new CategorieProduit("9687","produit2"));
+            add(new CategorieProduit("4503","produit3"));
+        }
+    };
+    
+        @Test
+    public void testretrieveAllCategories() {
+        Mockito.when(categorieRepository.findAll()).thenReturn(listProduits);
+        List<CategorieProduit> listproduit3 = categorieService.retrieveAllCategorieProduits();
+        assertEquals(3, listproduit3.size());
+        //assertEquals(produit1.getIdProduit(),55L);
+        System.out.println("2555");
+    }
+
+    /*@Test
     public void testRetrieveCategorieProduit() {
 
         CategorieProduit categorie = new CategorieProduit(null,"xyz","xyz");
@@ -83,7 +102,7 @@ public class CategorieProduitServiceTest {
         assertEquals(3,catList.size());
         System.out.println(" Retrieve all is working correctly...!!");
 
-    }
+    }*/
 
    /* @Test
     public void TestDeleteCategorieProduit(){
