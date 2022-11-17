@@ -38,22 +38,13 @@ public class CategorieProduitServiceTest {
     CategorieProduit cp2 = new CategorieProduit("5681","produit5");
 
 
-    List<CategorieProduit> listProduits = new ArrayList<CategorieProduit>() {
-        {
-            add(cp1);
-            add(new CategorieProduit("9687","produit2"));
-            add(new CategorieProduit("4503","produit3"));
-        }
-    };
-    
-        @Test
-    public void testretrieveAllCategories() {
-        Mockito.when(categorieRepository.findAll()).thenReturn(listProduits);
-        List<CategorieProduit> listproduit3 = categorieService.retrieveAllCategorieProduits();
-        assertEquals(3, listproduit3.size());
-        //assertEquals(produit1.getIdProduit(),55L);
-        System.out.println("2555");
-    }
+    @Test
+	public void addCategrieTest() {
+    	when(categorieRepository.save(cp1)).thenReturn(cp1);
+    	assertNotNull(cp1);
+		assertEquals(cp1, categorieService.addCategorieProdui(cp1)); 
+		System.out.println("add works !");
+	}
 
     /*@Test
     public void testRetrieveCategorieProduit() {
