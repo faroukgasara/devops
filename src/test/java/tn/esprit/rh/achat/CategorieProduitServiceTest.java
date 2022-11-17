@@ -53,70 +53,34 @@ public class CategorieProduitServiceTest {
 		assertEquals(cp1, categorieService.addCategorieProduit(cp1)); 
 		System.out.println("add works !");
 	}
-
-    /*@Test
-    public void testRetrieveCategorieProduit() {
-
-        CategorieProduit categorie = new CategorieProduit(null,"xyz","xyz");
-        categorie.setidCategorieProduit(1L);
-
-        Mockito.when(categorieRepository.findById(1L)).thenReturn(Optional.of(categorie));
-        categorieService.retrieveCategorieProduit(1L);
-        Assertions.assertNotNull(categorie);
-
-        System.out.println(categorie);
-        System.out.println(" Retrieve is working correctly...!!");
-
+	
+	@Test
+    public void DeleteCategrieTest() {
+    	categorieRepository.save(cp1);
+    	categorieService.deleteCategorieProduit(cp1.getIdCategorieProduit());
+    	verify(categorieRepository, times(1)).deleteById(cp1.getIdCategorieProduit());
+    	System.out.println("Delete works !");
+    	
     }
 
-    @Test
-    public void createCategorieProduitTest()
-    {
-
-        CategorieProduit categorie2 = new CategorieProduit(null,"abcd", "abcd");
-        categorie2.setidCategorieProduit(2L);
-
-        categorieService.addCategorieProduit(categorie2);
-        verify(categorieRepository, times(1)).save(categorie2);
-        System.out.println(categorie2);
-        System.out.println(" Create is working correctly...!!");
+    
+    @Test 
+    public void UpdateCategrieTest() {
+    	when(categorieRepository.save(cp1)).thenReturn(cp1);
+    	assertNotNull(cp1);
+    	assertEquals(cp1, categorieService.updateCategorieProduit(cp1));
+    	System.out.println("Update works !");
     }
-
+    
     @Test
-    public void getAllCategorieProduitTest()
-    {
-        @SuppressWarnings("serial")
-        List<CategorieProduit> Catprodlist = new ArrayList<CategorieProduit>() {
+    public void retrieveCategrieTest() {
+    	when(categorieRepository.findById(cp1.getIdCategorieProduit())).thenReturn(Optional.of(cp1));
+    	assertEquals(cp1, categorieService.retrieveCategorieProduit(cp1.getIdCategorieProduit()));
+    	System.out.println("Retrieve works !");
+    }
+    
+    
+}
 
-            {
-                add(new CategorieProduit(null,"qwerty","qwerty"));
-                add(new CategorieProduit(null,"aqw","aqw"));
-                add(new CategorieProduit(null,"azerty","azerty"));
-            }};
-
-
-        when(categorieService.retrieveAllCategorieProduits()).thenReturn(Catprodlist);
-        //test
-        List<CategorieProduit> catList = categorieService.retrieveAllCategorieProduits();
-        assertEquals(3,catList.size());
-        System.out.println(" Retrieve all is working correctly...!!");
-
-    }*/
-
-   /* @Test
-    public void TestDeleteCategorieProduit(){
-
-        CategorieProduit categorie1 = new CategorieProduit(null,"az","az");
-        categorie1.setidCategorieProduit(1L);
-
-        Mockito.lenient().when(categorieRepository.findById(categorie1.getIdCategorieProduit())).thenReturn(Optional.of(categorie1));
-
-        categorieService.deleteCategorieProduit(1L);
-        verify(categorieRepository).deleteById(categorie1.getIdCategorieProduit());
-
-        System.out.println(categorie1);
-        System.out.println(" Delete is working correctly...!!");
-    }*/
-    //done
 
 }
