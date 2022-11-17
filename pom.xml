@@ -85,6 +85,25 @@
     </repository>
     
 </distributionManagement>
-
+	<profiles>
+	<profile>
+		<id>sonar</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+			<!-- Optional URL to server. Default value is http://localhost:9000 -->
+			<sonar.host.url>
+				http://192.168.1.61:9000
+			</sonar.host.url>
+			<sonar.projectKey>
+				sonar-achat-token
+			</sonar.projectKey>
+			<sonar.login>
+				5dcbbc4ff2d0f7ec7a02e6704b9c099ef3cdfd3e
+			</sonar.login>
+		</properties>
+	</profile>
+	</profiles>
 
 </project>
