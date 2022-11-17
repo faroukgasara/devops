@@ -33,13 +33,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringRunner.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ExtendWith(MockitoExtension.class)
 public class CategorieProduitServiceTest {
 
-    @Mock
+    @MockBean
     CategorieProduitRepository categorieRepository;
 
-    @InjectMocks
+    @Autowired
     CategorieProduitServiceImpl categorieService;
     
      CategorieProduit cp1 = new CategorieProduit("2365","produit1");
