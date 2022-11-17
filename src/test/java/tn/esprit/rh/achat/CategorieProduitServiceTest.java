@@ -40,7 +40,7 @@ public class CategorieProduitServiceTest {
 
     List<CategorieProduit> listProduits = new ArrayList<CategorieProduit>() {
         {
-            add(p1);
+            add(cp1);
             add(new CategorieProduit("9687","produit2"));
             add(new CategorieProduit("4503","produit3"));
         }
