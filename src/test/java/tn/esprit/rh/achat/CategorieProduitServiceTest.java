@@ -50,7 +50,7 @@ public class CategorieProduitServiceTest {
 	public void addCategrieTest() {
     	when(categorieRepository.save(cp1)).thenReturn(cp1);
     	assertNotNull(cp1);
-		assertEquals(cp1, categorieService.addCategorieProdui(cp1)); 
+		assertEquals(cp1, categorieService.addCategorieProduit(cp1)); 
 		System.out.println("add works !");
 	}
 
