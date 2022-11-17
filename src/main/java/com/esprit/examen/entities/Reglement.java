@@ -33,6 +33,18 @@ public class Reglement implements Serializable{
 	private Boolean payee;
 	@Temporal(TemporalType.DATE)
 	private Date dateReglement;
+	
+	
+	
+	public Reglement(float montantPaye, float montantRestant) {
+		super();
+	
+		this.montantPaye = montantPaye;
+		this.montantRestant = montantRestant;
+	}
+
+
+
 	@ManyToOne
 	@JsonIgnore
 	private Facture facture;

@@ -55,6 +55,8 @@ public class ReglementDto {
         reglementDtos.forEach(reglementDto -> reglements.add(ReglementDto.toEntity(reglementDto)));
         return reglements;
     }
+
+	
     
 
 }
