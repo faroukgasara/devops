@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 import static org.junit.Assert.*;
 import com.esprit.examen.dto.ReglementDto;
 import lombok.extern.slf4j.Slf4j;
@@ -97,4 +97,4 @@ public class ReglementServiceImplTest {
 	        reglementService.deleteReglement(savedReglement);
 
 	    }
-	}
+	}*/
