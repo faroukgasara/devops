@@ -44,7 +44,7 @@ public class StockRestController {
 		return stock;
 	}
 
-	// http://localhost:8089/SpringMVC/stock/remove-stock/{stock-id}
+
 	@DeleteMapping("/remove-stock/{stock-id}")
 	@ResponseBody
 	public void removeStock(@PathVariable("stock-id") Long stockId) {

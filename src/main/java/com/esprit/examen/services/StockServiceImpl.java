@@ -19,22 +19,19 @@ public class StockServiceImpl implements IStockService {
 
 	@Override
 	public List<Stock> retrieveAllStocks() {
-		// récuperer la date à l'instant t1
+	
 		
 		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
 		for (Stock stock : stocks) {
 			
 		}
 		
-		// récuperer la date à l'instant t2
-		// temps execution = t2 - t1
+		
 		return stocks;
 	}
 
 	@Override
 	public Stock addStock(Stock s) {
-		// récuperer la date à l'instant t1
-		
 		return stockRepository.save(s);
 		
 	}
