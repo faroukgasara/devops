@@ -4,7 +4,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class InvalidEntityException extends RuntimeException{
-    public InvalidEntityException(String message) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public InvalidEntityException(String message) {
         super(message);
     }
 }
