@@ -10,7 +10,7 @@ services:
     MYSQL_DATABASE: tpachato
     MYSQL_ROOT: root
     MYSQL_PASSWORD: root
-    MYSQL_HOST: mysqldb2
+    MYSQL_HOST: mysqldb1
    ports:
     - 3307:3306    
 
